@@ -1,0 +1,13 @@
+# files
+.env
+cookie.txt
+cookies.txt
+
+# py files 
+test.py
+
+# Folders 
+env/
+Random-Song/ 
+Downloads/ 
+youtube-downloaded-songs/
