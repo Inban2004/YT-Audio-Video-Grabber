@@ -1,0 +1,16 @@
+# YouTube Downloader - Requirements
+
+# Core dependency
+yt-dlp>=2024.0.0
+
+# Optional dependencies for enhanced features
+Pillow>=10.0.0  # For thumbnail preview
+requests>=2.31.0  # For downloading thumbnails
+
+# Note: ffmpeg is optional
+# - Required for MP3 audio conversion
+# - Not needed for M4A, WEBM formats
+# Install ffmpeg separately if needed:
+#   - Ubuntu/Debian: sudo apt install ffmpeg
+#   - macOS: brew install ffmpeg
+#   - Windows: Download from https://ffmpeg.org/
