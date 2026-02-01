@@ -1,7 +1,6 @@
 # 🎬 Modern YouTube Downloader
 
 A beautiful, feature-rich YouTube downloader with a modern GUI built using Python and Tkinter. updated with Download both audio and video from YouTube with **no mandatory ffmpeg dependency** for basic formats.
-A beautiful, feature-rich YouTube downloader with a modern GUI built using Python and Tkinter. updated with Download both audio and video from YouTube with **no mandatory ffmpeg dependency** for basic formats.
 
 ---
 
