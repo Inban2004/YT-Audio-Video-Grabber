@@ -478,7 +478,7 @@ class ModernYouTubeDownloader:
         footer.pack(fill=tk.X, side=tk.BOTTOM)
         footer.pack_propagate(False)
         
-        ffmpeg_status = "✅ ffmpeg available" if self.ffmpeg_available else "⚠️ ffmpeg not found (MP3 unavailable)"
+        ffmpeg_status = "✅ ffmpeg available" if self.ffmpeg_available else "⚠️ ffmpeg not found (MP3/MP4 unavailable)"
         
         tk.Label(
             footer,
@@ -582,6 +582,20 @@ class ModernYouTubeDownloader:
             )
             if response:
                 self.audio_format.set("m4a")
+            else:
+                return
+        
+        # Check ffmpeg for MP4 video
+        if self.download_mode.get() == "video" and self.video_format.get() == "mp4" and not self.ffmpeg_available:
+            response = messagebox.askyesno(
+                "ffmpeg Not Found",
+                "MP4 video requires ffmpeg to merge video and audio streams.\n"
+                "ffmpeg is not installed.\n\n"
+                "Would you like to download as WEBM instead?\n"
+                "(WEBM works without ffmpeg)"
+            )
+            if response:
+                self.video_format.set("webm")
             else:
                 return
         

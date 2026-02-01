@@ -1,6 +1,7 @@
 # 🎬 Modern YouTube Downloader
 
 A beautiful, feature-rich YouTube downloader with a modern GUI built using Python and Tkinter. updated with Download both audio and video from YouTube with **no mandatory ffmpeg dependency** for basic formats.
+A beautiful, feature-rich YouTube downloader with a modern GUI built using Python and Tkinter. updated with Download both audio and video from YouTube with **no mandatory ffmpeg dependency** for basic formats.
 
 ---
 
@@ -95,11 +96,18 @@ pip install -r requirements.txt
 - `Pillow` - Enables thumbnail preview
 - `requests` - Required for thumbnail downloading
 
-### 2. Install ffmpeg (Optional)
+### 2. Install ffmpeg (Required for MP4 Videos & MP3 Audio)
 
-ffmpeg is **optional** but recommended for MP3 and high-quality MP4 downloads.
+> [!IMPORTANT]
+> **ffmpeg is REQUIRED for:**
+> - 🎬 **MP4 video downloads** (to merge video + audio streams)
+> - 🎵 **MP3 audio downloads** (for format conversion)
+> 
+> **ffmpeg is NOT needed for:**
+> - ✅ M4A audio downloads (works without ffmpeg)
+> - ✅ WEBM video downloads (works without ffmpeg)
 
-**Ubuntu/Debian:**
+**Ubuntu/Debian (Linux):**
 ```bash
 sudo apt update
 sudo apt install ffmpeg
@@ -120,6 +128,8 @@ brew install ffmpeg
 ffmpeg -version
 ```
 
+You should see version information. If successful, restart the app and the footer will show `✅ ffmpeg available`.
+
 ### 3. Run the Application
 
 ```bash
@@ -132,6 +142,7 @@ python youtube_downloader_modern.py
 - Video is private/unavailable
 - No internet connection
 
+### 🔄 Updatation
 ### 🔄 Updatation
 - Complete GUI overhaul
 - Better error handling
@@ -152,8 +163,10 @@ python youtube_downloader_modern.py
 - `Pillow` (optional, for thumbnails)
 - `requests` (optional, for thumbnails)
 
-**Optional:**
-- `ffmpeg` (for MP3/MP4 conversion)
+**External Dependencies:**
+- `ffmpeg` (required for MP4 videos and MP3 audio)
+  - Not needed for M4A audio or WEBM video
+  - See installation instructions above
 
 ---
 
@@ -187,4 +200,11 @@ Possible future features:
 - Added download history
 - Added theme toggle
 - Improved error handling
+
+### v1.0 (Legacy Version)
+- Basic audio-only downloader
+- Simple tkinter GUI
+- Required ffmpeg
+- MP3 format only
+
 ---
